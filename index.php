@@ -37,6 +37,7 @@ function download(filename, text) {
     <tr><th>Job title:</th><td><input onchange="this.form.submit()" type="text" name="title" value="<?php echo $values[2]; ?>"></td></tr>
     <tr><th>Phone:</th><td><input onchange="this.form.submit()" type="text" name="phone" value="<?php echo $values[3] ? $values[3] : "+49 30 2902825 331"; ?>"> (replace extension or whole number! Example: +49 30 2902825 331)</td></tr>
     <tr><th>Additional text:</th><td><input onchange="this.form.submit()" type="text" name="additional" value="<?php echo $values[4]; ?>"> (fax, mobile, GPG fingerprint, …) (Need a line break? Use <code>&lt;br /&gt;</code>)</td></tr>
+    <tr><th>External images:</th><td><input onchange="this.form.submit()" type="checkbox" name="external"<?php if ($values[5]) echo " checked"; ?>> (Only check this if you need a small signature for Google webmail)</td></tr>
     <tr><th>Preview:</th><td><input type="submit" value="Preview"><br /><iframe width="700" height="450" name="preview"></iframe><br />Make sure the signature is correct, then:</td></tr>
     <tr><th>Download:</th><td>Click <a href="javascript:download('Signature created by SigTron 3000.html', window.frames[0].document.body.innerHTML);">here</a>, then save to a local file and use it in your email client as HTML signature</td></tr>
   </table>
