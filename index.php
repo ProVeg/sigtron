@@ -1,4 +1,4 @@
-<h1>SigTron 3000™</h1>
+<h1>SigTron 3000™ 21.04 LTS Babbling Baboon</h1>
 <noscript>Turn on JavaScript!</noscript>
 <script>
 function download(filename, text) {
@@ -16,7 +16,7 @@ function download(filename, text) {
 </script>
 <p><?php 
   if(!isset($_COOKIE["sigtron"])) {
-    echo "No cookie! If you filled in this form in the last year, check your cookie settings!";
+    echo "No cookie! If you filled in this form during the last year, check your cookie settings!";
   } else {
     $values = explode("###", $_COOKIE["sigtron"]); 
     echo "Loaded values from cookie!";
@@ -34,14 +34,15 @@ function download(filename, text) {
       }
     ?></select></td></tr>
     <tr><th>Name:</th><td><input onchange="this.form.submit()" type="text" name="name" value="<?php echo $values[1]; ?>"></td></tr>
+    <tr><th>Pronoun:</th><td><input onchange="this.form.submit()" type="text" name="pronoun" value="<?php echo $values[6]; ?>"> (either leave blank or put your preferred pronouns in parantheses)</td></tr>
     <tr><th>Job title:</th><td><input onchange="this.form.submit()" type="text" name="title" value="<?php echo $values[2]; ?>"></td></tr>
     <tr><th>Phone:</th><td><input onchange="this.form.submit()" type="text" name="phone" value="<?php echo $values[3] ? $values[3] : "+49 30 2902825 331"; ?>"> (replace extension or whole number! Example: +49 30 2902825 331)</td></tr>
     <tr><th>Additional text:</th><td><input onchange="this.form.submit()" type="text" name="additional" value="<?php echo $values[4]; ?>"> (fax, mobile, GPG fingerprint, …) (Need a line break? Use <code>&lt;br /&gt;</code>)</td></tr>
     <tr><th>External images:</th><td><input onchange="this.form.submit()" type="checkbox" name="external"<?php if ($values[5]) echo " checked"; ?>> (Only check this if you need a small signature for Google webmail)</td></tr>
     <tr><th>Preview:</th><td><input type="submit" value="Preview"><br /><iframe width="700" height="450" name="preview"></iframe><br />Make sure the signature is correct, then:</td></tr>
-    <tr><th>Download:</th><td>Click <a href="javascript:download('Signature created by SigTron 3000.html', window.frames[0].document.body.innerHTML);">here</a>, then save to a local file and use it in your email client as HTML signature</td></tr>
+    <tr><th>Download:</th><td>Click <a href="javascript:download('Signature created by SigTron 3000.html', window.frames[0].document.body.innerHTML);">here</a>, then save to a local file and use it in your email client as HTML signature. <a href="https://sites.google.com/proveg.com/help-pages-of-the-it/how-tos/g-suite/gmail#h.64w0ol3oeh0b">Detailed instructions</a></td></tr>
   </table>
 </form>
-<p>If you need a special template for you unit, contact Eileen.<br />
+<p>If you need a special template for your unit, contact Eileen.<br />
 For support with the software, contact Simon.<br />
 <a href="https://github.com/ProVeg/sigtron">SigTron 3000™ on Github</a></p>
