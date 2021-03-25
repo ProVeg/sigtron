@@ -18,7 +18,7 @@
   $file = str_replace("###ADDITIONAL###", $_POST["additional"], $file);
   $file = preg_replace_callback("/###(\w+)###(\w+)###/",
     function ($hit) {
-      return '<img alt="'.$hit[1].'" src="'.($_POST["external"] ? 'http://proveg.com/sig/'.$hit[2].'.png' : base64_encode_image($hit[2].'.png', 'png')).'" />';
+      return '<img alt="'.$hit[1].'" src="'.($_POST["external"] ? 'https://'.$_SERVER['HTTP_HOST'].dirname($_SERVER['PHP_SELF']).'/'.$hit[2].'.png' : base64_encode_image($hit[2].'.png', 'png')).'" />';
     }, $file);
 
   echo $file;
